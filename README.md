@@ -59,7 +59,7 @@ Deploy a **QAIC Hub-and-Spoke Network** connecting 1 Central Coordinating Hub, 3
 |---|---|---|---|---|
 | **Level 1: Awareness** | 1st & 2nd Year Undergrads (Statewide) | Qubits, Superposition, Entanglement intuition, Quantum Career Tracks | 3D Bloch Sphere visualization, Interactive coin-toss analogy | NQM Pillar 4: Human Resource Development (Awareness Track) |
 | **Level 2: Foundations** | 3rd Year CS, ECE, Data Science | Bra-Ket notation, Unitary Gates (H, X, Y, Z, S, T, CNOT), Matrix tensors | Pure Python / NumPy Circuit Simulator, Bell State & GHZ creation | AICTE Model Curriculum: Quantum Computing Foundations (ET-QC-201) |
-| **Level 3: Application** | Final Year Students & Faculty Trainees | Quantum Algorithms (Deutsch-Jozsa, Grover's), BB84 QKD, QML (VQC) | Grover's 4-item search, BB84 protocol simulation with Eve detection | AICTE Specialized Elective / APSSDC Master Trainer Certification |
+| **Level 3: Application** | Final Year Students & Faculty Trainees | Quantum Algorithms (Deutsch-Jozsa, Grover's), Quantum Teleportation, QML (VQC) | Grover's 4-item search, Quantum Teleportation circuit simulation | AICTE Specialized Elective / APSSDC Master Trainer Certification |
 | **Level 4: Specialisation**| Top 10-15% cohort & Post-graduates | Port logistics optimization (QAOA), Post-Quantum Cryptography, Drug Discovery | Capstone projects with TCS / C-DAC, hardware cloud execution | National Quantum Mission Co-Op Grant & Industry Placements |
 
 ---
@@ -71,26 +71,44 @@ Deploy a **QAIC Hub-and-Spoke Network** connecting 1 Central Coordinating Hub, 3
 - Regional breakdown (North Coastal, Coastal Andhra, Rayalaseema).
 - Searchable and filterable institutional node registry with readiness metrics and active lab environments.
 
-### B. High-Performance Quantum Circuit Simulator (Pure Python & NumPy)
-- Exact statevector calculation for multi-qubit systems without heavy external C-dependencies.
-- Unitary gate implementation ($H, X, Y, Z, S, T, CNOT, CZ, SWAP$).
-- Computes single-qubit reduced density matrices, Bloch vector coordinates $(\langle X \rangle, \langle Y \rangle, \langle Z \rangle)$, spherical angles $(\theta, \phi)$, and purity.
-- Generates 1,024-shot probabilistic measurement histograms.
-- Built-in circuit presets:
-  - **Bell State $|\Phi^+\rangle = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle)$**
-  - **GHZ 3-Qubit Entanglement $|\text{GHZ}\rangle = \frac{1}{\sqrt{2}}(|000\rangle + |111\rangle)$**
-  - **Grover's 2-Qubit Database Search** with Oracle and Diffusion operator.
+### B. Upgraded Multi-Qubit Quantum Lab Simulation Studio (1–4 Qubits)
+- **Configurable Qubit Registers & Sampling:** 1 to 4 configurable qubit registers with 100 to 4,096 measurement shots, plus an exact analytical probability mode.
+- **Universal Unitary Gate Library:**
+  - *Superposition & Pauli Unitaries:* $H, X, \sqrt{X}, Y, Z, S, S^\dagger, T, T^\dagger$.
+  - *Continuous Parameterized Rotations:* $RX(\theta), RY(\theta), RZ(\theta)$ with configurable rotation angles ($\pi/4, \pi/2, \pi, 3\pi/2, 2\pi$).
+  - *Multi-Qubit Entanglers:* $CNOT, CZ, CH, SWAP$, and 3-qubit $CCNOT$ (Toffoli).
+- **Interactive Step-by-Step Circuit Stepper:** Step forward and backward through each gate operation, visualizing intermediate statevector evolutions and Bloch vector rotations before wavefunction collapse.
+- **Multimodal State Inspector:**
+  - *Complex Amplitudes & Dynamic Phase Wheels:* Statevector kets with real/imaginary parts, probabilities, and SVG phase wheels color-coded by quantum phase angle $\phi$.
+  - *3D SVG Bloch Spheres & von Neumann Entanglement Entropy:* Calculates single-qubit reduced density matrices $\rho$, density purity $\text{Tr}(\rho^2)$, and exact bipartite von Neumann entanglement entropy $S(\rho) = -\text{Tr}(\rho \log_2 \rho)$ to rigorously distinguish separable states from maximally entangled Bell and GHZ states.
+  - *Probabilistic Measurement Histogram:* Live Chart.js shot distribution for arbitrary circuits.
+  - *OpenQASM 2.0 & Qiskit Python Exporters:* Real-time automated code synthesis and 1-click clipboard export for execution on IBM Quantum or C-DAC Param Q-Sim cloud backends.
+- **8 Built-in Algorithmic Presets:**
+  1. **Bell State $|\Phi^+\rangle$:** $(|00\rangle + |11\rangle)/\sqrt{2}$
+  2. **Bell Singlet $|\Psi^-\rangle$:** $(|01\rangle - |10\rangle)/\sqrt{2}$
+  3. **GHZ State (3Q):** $(|000\rangle + |111\rangle)/\sqrt{2}$
+  4. **W-State (3Q):** $(|001\rangle + |010\rangle + |100\rangle)/\sqrt{3}$
+  5. **Quantum Teleportation (3Q):** Full pipeline with unknown state preparation, EPR distribution, Bell state measurement, and feedforward recovery.
+  6. **Grover's Search (2Q):** Oracle inversion and diffusion operator with 100% amplification of target $|11\rangle$.
+  7. **Deutsch-Jozsa Algorithm (2Q):** Deterministic single-query evaluation of balanced vs. constant functions.
+  8. **Quantum Fourier Transform (3Q QFT):** Modular frequency-domain phase transformation.
 
-### C. BB84 Quantum Key Distribution (QKD) Simulator
-- Interactive sender (Alice) and receiver (Bob) with random photon polarization bases ($+$ rectilinear, $\times$ diagonal).
-- **Interactive Eavesdropper (Eve) Intercept Toggle**:
-  - Without Eve: Error rate (QBER) = 0.0% $\rightarrow$ Secure authenticated key generated.
-  - With Eve: Wavefunction collapse causes QBER $\approx 25-30\%$ $\rightarrow$ Tampering immediately detected, compromised key discarded!
-
-### D. Statewide Diagnostic Assessment & APSSDC Credential Engine
-- Standardized multiple-choice competency exam covering Levels 1 to 3.
-- Automatic scoring, granular competency radar profiling (Superposition, Circuits, Entanglement, Cryptography, Algorithmic Complexity).
-- Instant verifiable digital credential badge generator with unique ID.
+### C. Statewide Diagnostic Assessment & APSSDC Credential Engine
+- **Expanded 12-Question Diagnostic Assessment:** Rigorous evaluation covering 6 core quantum domains:
+  1. *Superposition & Principles* (Born rule, probability amplitudes, No-Cloning Theorem).
+  2. *Unitary Gates & Matrices* (Reversibility, Hadamard, Pauli, S & T phase relationships).
+  3. *Multi-Qubit Entanglement* (Tensor product Hilbert spaces $2^n$, Bell state synthesis via $H + CNOT$).
+  4. *Measurement & Entropy* (Subsystem density matrices, purity $\text{Tr}(\rho^2)$, von Neumann entropy $S(\rho)$).
+  5. *Quantum Algorithms* (Quantum Teleportation protocol, Grover diffusion operator, Deutsch-Jozsa query complexity).
+  6. *Complexity & Hardware* (BQP complexity boundary, classical vs quantum polynomial time).
+- **Personalized Weak-Topic Recommendations & Remediation:**
+  - Evaluates granular percentage mastery per competency category.
+  - Automatically identifies sub-mastery areas ($< 75\%$) and categorizes severity (*Critical Review Required* vs. *Targeted Practice Recommended*).
+  - Delivers specific diagnostic guidance, recommended curriculum level links (opening the pop-out visualizer modal), and 1-click lab practice presets directly in the quantum circuit simulator.
+  - Provides a question-by-question post-assessment review with theoretical explanations and formula derivations.
+- **Verifiable APSSDC Quantum Skill Credential:**
+  - Real-time generation of verifiable digital certificate badges with unique credential ID (`AP-QAIC-XXXXXX`), candidate name, academic institution, and verified score tier.
+  - Dynamic radar chart mapping individual demonstrated skills across all evaluated competency dimensions.
 
 ---
 
@@ -106,11 +124,11 @@ python hack.py
 ```bash
 python hack.py --cli
 ```
-*Runs verification of the quantum statevector engine, Bell state creation, BB84 QKD protocol under eavesdropping conditions, and prints the statewide AP college node distribution.*
+*Runs programmatic verification of the statevector engine, Bell state maximal entanglement, 3-qubit GHZ state von Neumann entropy, Grover's search 100% probability amplification, and prints the statewide AP college node distribution.*
 
 ---
 
 ## 6. Project Files
-- `hack.py`: Complete Python application containing the quantum simulator, QKD engine, Flask API backend, and the interactive Tailwind CSS frontend.
+- `hack.py`: Complete self-contained Python application containing the upgraded quantum simulation studio, Flask REST API backend, and interactive Tailwind CSS frontend.
 - `README.md`: Architectural documentation, problem statement alignment, and operational guide.
 
