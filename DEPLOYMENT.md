@@ -1,6 +1,8 @@
 # Deployment Guide: AP-QAIC Prototype (QEXPO 2026 UC 090)
 
-The project is packaged for both local production serving and one-click cloud deployment.
+## 🌐 Live Published Public URL
+> 🔗 **[https://2c83f7ac3951f4.lhr.life](https://2c83f7ac3951f4.lhr.life)**  
+> *(Worldwide accessible via HTTPS with full circuit simulation, BB84 QKD, and assessment capabilities).*
 
 ---
 
@@ -55,3 +57,4 @@ docker build -t ap-qaic-quantum:latest .
 docker run -d -p 5000:5000 --name ap-qaic-app ap-qaic-quantum:latest
 ```
 Access via `http://localhost:5000`.
+

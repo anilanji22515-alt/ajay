@@ -20,3 +20,4 @@ EXPOSE 5000
 
 # Start production server with gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "--timeout", "120", "hack:app"]
+

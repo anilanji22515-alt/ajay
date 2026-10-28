@@ -5,6 +5,12 @@
 
 ---
 
+## Live Published URL
+> 🚀 **Public Live Link:** [**https://2c83f7ac3951f4.lhr.life**](https://2c83f7ac3951f4.lhr.life)  
+> *Active, secured over TLS/HTTPS, and accessible globally from any browser or mobile device.*
+
+---
+
 ## 1. Executive Summary & Problem Context
 
 The adoption of quantum technologies across India is constrained by a severe talent bottleneck: the lack of practical, job-relevant quantum software engineering and algorithmic skills. While top-tier specialist institutions (like IITs and IISc) possess research equipment, **380+ engineering and degree colleges across Andhra Pradesh remain excluded** due to:
